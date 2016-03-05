@@ -1,0 +1,8 @@
+:bot_token: xoxb-20386023331-A0DwWGFpCkpQlgWHmyfUsk7b
+:api_call:
+  :meme_get: https://api.imgflip.com/get_memes
+  :meme_post: https://api.imgflip.com/caption_image
+  :username: drodriguez
+  :password: salesforce1
+  :icon_url: http://usal.acm.org/wp-content/uploads/2015/11/IMG_2015-11-19-215004.jpg
+  :bot_username: Meme Bot

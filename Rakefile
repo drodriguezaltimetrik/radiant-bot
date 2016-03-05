@@ -1,10 +1,12 @@
 require 'rake/task'
+require_relative 'lib/radiant_bot'
 
 namespace :radiant_bot do
   task :start do
-    require_relative 'lib/config'
-    require_relative 'lib/radiant_bot'
 
-    RadiantBot.run
+    RadiantBot.load_meme_methods!
+
+    warn 'Bot Starting'
+    RadiantBot.start!
   end
 end
