@@ -1,5 +1,7 @@
 module RadiantBot
 
+  @meme_list  = YAML.load_file("#{$path}/ymls/meme_list.yml")[:memes]
+
   def load_meme_methods!
     @client.on :message do |data|
       case data.text

@@ -1,0 +1,1 @@
+worker: bundle exec rake radiant_bot:start
