@@ -5,7 +5,7 @@ module RadiantBot
   def load_meme_methods!
     @client.on :message do |data|
       case data.text
-        when /^!bot meme_list$/
+        when /^!bot meme:list$/
           result = ''
           @meme_list.keys.each { |element| result << "#{element.to_s.gsub('_', ' ').titleize}, " }
           @client.web_client.chat_postMessage :channel  => data.channel,
@@ -13,7 +13,7 @@ module RadiantBot
                                               :username => $config[:api_call][:bot_username],
                                               :icon_url => $config[:api_call][:icon_url]
 
-        when /^!bot meme_info {[\w\s|\w,\s]+}$/
+        when /^!bot meme:info {[\w\s|\w,\s]+}$/
           meme_name_original = data.text[/{[\w\s|\w,\s]+}/]
           meme = meme_name_original[1..-2].downcase.gsub(' ', '_').to_sym
 
@@ -28,7 +28,7 @@ module RadiantBot
                                                 :username => $config[:api_call][:bot_username],
                                                 :icon_url => $config[:api_call][:icon_url]
           end
-        when /^!bot meme_create/
+        when /^!bot meme:create/
           attributes = data.text.scan(/{[^{}]*}/)
 
           if attributes.size < 2

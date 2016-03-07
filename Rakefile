@@ -11,6 +11,7 @@ namespace :radiant_bot do
     }
 
     RadiantBot.load_meme_methods!
+    #RadiantBot.load_ruby_training_methods!
 
     warn 'Bot Starting'.green
     RadiantBot.start!
